@@ -1,0 +1,17 @@
+<?xml version='1.0'?>
+<!-- Format:
+	Tileset
+		setName (name of the tileset being defined)
+		filename (location of file containing tileset declaration within XML folder. Format: Content\XML\filepath.xml)
+	/Tileset
+-->
+<TilesetList>
+	<Tileset>
+		<setName>Sky Set</setName>
+		<filename>Content\XML\skyset.xml</filename>
+	</Tileset>
+	<Tileset>
+		<setName>Earth Set</setName>
+		<filename>Content\XML\earthset.xml</filename>
+	</Tileset>
+</TilesetList>
