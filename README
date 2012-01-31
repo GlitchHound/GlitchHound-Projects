@@ -1,0 +1,17 @@
+This repository is divided into folders representing various projects I've undertaken over time. All files necessary to understand the code are included, but there are no guarantees that the files can be compiled (namely, the Chaos Directive files are most definitely not in a compile-ready state).
+
+Chaos Directive is a 2D sidescrolling space shooter I am slowly producing in my spare time. I stress modding as a feature of the game, so included is some C# code to parse XML files which define the assets to be loaded at runtime. The XML reader is an abstract class, and therefore I've included two complete implementations which would be used to load the tilesets into the game. I've also included the XML files and their corresponding (very basic) art assets. Understanding how they work is probably a task only to be undertaken in the presence of extra free time, perhaps while consuming copious amounts of tea.
+
+ISA Calculator is a MATLAB file produced for a University assignment. It's worth noting that at the time I was coding that, I was maintaining a blog. Some musings on programming, and on that assignment, could be found at blogs.scienceforums.net/GlitchHound if one was so inclined. There are also notes on a (currently shelved) Java project I was considering.
+
+Finally there's the TDSManager which is a project I started for managing a Terraria server. It listens to the server output and sends appropriate commands through to the server, so that players can send commands without having to minimize the game and access the console. I apologize for the lack of comments, I've been meaning to improve this code and haven't gotten around to it.
+
+I hope you enjoy your time poring over my code! Please feel free to contact me:
+
+fourthsheep@gmail.com
+
+c.p.brensinger@student.liv.ac.uk
+
++447503039931
+
++12036608990
