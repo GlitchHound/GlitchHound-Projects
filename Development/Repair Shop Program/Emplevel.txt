@@ -1,0 +1,123 @@
+Emplevel.txt Interpretation:
+RECORD LENGTH		2 CHARACTERS
+COMMA			1 CHARACTER [2C]
+IDENTIFIER		1 BYTE [SEE NOTE 1]
+SEPARATOR		1 BYTE 00
+----THE REST OF THE RECORD DEPENDS ON THE IDENTIFIER----
+----IF THE ID IS 01-08:
+	SECURITY LEVEL NAME	20 CHARACTERS
+	UNUSED			10 BYTES 00
+----IF THE ID IS 63:
+	MASTER PASSWORD		8 BYTES [Hex of character times two. Can be shorter, extra converted to Byte00]
+	UNUSED			22 BYTES 00
+----IF THE ID IS SOMETHING ELSE:
+	SEE NOTE 1; THE VALUE OF THE INDEXED BYTES CORRESPONDS TO THE SECURITY LEVEL (01-08 OR MASTER) NEEDED
+	UNUSED			21+ BYTES 00
+----THE REST OF THE RECORD IS AS FOLLOWS----
+END OF RECORD		2 BYTES 0D 0A
+END OF FILE		1A
+
+Note 1:
+Values 01-08 and 63 are Security levels (1-8 and Master)
+Values other than 01-08 and 63 are locations for password protecting:
+65-Setup Menu
+	2nd Byte After	Shop Information
+	3rd		Job Ticket Setup
+	4th		Vehicle Descriptions
+	5th		Jobs and Parts
+	6th		Customer Contact
+	7th		Employees
+	8th		Accounts Receivable
+	9th		Printer Settings
+	10th		System Setup
+66-Setup-Job Ticket Setup
+	2	Job Ticket Defaults
+	3	Special Charges
+	4	Recorded Comments
+	5	Job Ticket Statement
+	6	Invoice Statement
+	7	Estimate Statement
+	8	History Statement
+	9	Work Sheet Statement
+67-Setup-Vehicle Descriptions
+	2	Vehicle Types
+	3	Makes
+	4	Models
+	5	Body Types
+	6	Colors
+	7	Transmissions
+68-Setup-System Setup
+	2	Set Clock
+	3	Screen Saver
+	4	Security
+69-Setup-Jobs & Parts
+	2	Job Descriptions
+	3	Parts By Description
+	4	Parts By Brand
+	5	Part Groups
+	6	Supplier List
+6A-Setup-J&P-PBD-Add Part
+	2	Description Only (Generic)
+	3	Description, Brand, and Part #
+6B-Setup-System-Security
+	2	Update Security Ratings
+	3	Rate Employees
+	4	Assign Passwords
+	5	Set Security Checkpoints
+
+70-[Customer Files/[Shop Work-Add Job Ticket]]-Add New Customer
+	2	Individual
+	3	Business
+71-Directory
+	2	Inventory Program
+	3	Reset Network
+	4	Update Program
+73-End Of Day
+	2	Progress Report
+	3	Daily Closeout Report
+	4	Backup Data
+	5	Restore Data
+77-Reports
+	2	Accounts Receivable
+	3	Customer Lists
+	4	Inactive Customer Lists
+	5	Due for Service
+	6	Shop Productivity
+	7	Technician Productivity
+	8	Financial
+	9	Parts Sales
+78-Reports-Financial
+	2	Daily Totals Report
+	3	Monthly Totals Report
+7B-Setup-System-Security-[Assign Passwords/Set Security Checkpoints]
+	2	Assign Master Password/Set Security Level to Enter Program
+	3	Assign Employee Passwords/Set Security Level to Exit Program
+	4	Set Security Level for Program Sections
+7C-Main Screen
+	3rd Byte	Shop Work
+	4th		Customer Files
+	5th		End of Day
+	6th		Reports
+	7th		Directory
+	8th		Setup
+7D-Enter Program
+7E-Exit Program
+7F-Reports-Accounts Receivable
+	2	Account Aging Report
+	3	Statements
+	4	Account Due Form Letters
+80-Setup-Accounts Receivable
+	2	Account Terms Setup
+	3	Statement Notices
+81-Setup-A/R-Statement Notices
+	2	Current Notice
+	3	30 Days Notice
+	4	60 Days Notice
+	5	90 Days Notice
+8E-Setup-Customer Contact
+	2	Form Letters
+	3	Due For Service
+90-Setup-Printer Settings
+	2	Printer Hardware
+	3	Report Settings
+**-[Customer Files/[Shop Work-Add Job Ticket]]-Other Search Paths {{BROKEN - WILL NOT SET SECURITY!!}}

@@ -6,8 +6,6 @@ ISA Calculator is a MATLAB file produced for a University assignment. It's worth
 
 Finally there's the TDSManager which is a project I started for managing a Terraria server. It listens to the server output and sends appropriate commands through to the server, so that players can send commands without having to minimize the game and access the console. I apologize for the lack of comments, I've been meaning to improve this code and haven't gotten around to it.
 
-You'll also find the development folder, which contains such things as a design document for Chaos Directive, UI musings and CRC cards (in wonderful camera-phone quality), and notes taken on reverse-engineering a database for an auto repair shop program in order to facilitate migrating to a new (and still-supported) application.
-
 I hope you enjoy your time poring over my code! Please feel free to contact me:
 
 fourthsheep@gmail.com
